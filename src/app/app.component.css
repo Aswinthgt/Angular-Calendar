@@ -1,0 +1,32 @@
+/* .setwidth{
+  width: 30%;
+  margin-top: 5%;
+
+} */
+
+.inline {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.days mat-grid-tile {
+  font-size: 1.4rem;
+  width: calc(40.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.blur {
+  opacity: 50%;
+}

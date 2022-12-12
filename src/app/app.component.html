@@ -1,6 +1,15 @@
-<h1>{{month}}</h1>
+<div class="setwidth">
+  <div class="inline">
+    <button mat-raised-button (click)="preChange()">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
 
+    <h1>{{month}} {{year}}</h1>
 
+    <button mat-raised-button (click)="nextChange()">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
 
 
   <mat-grid-list class="days" cols="7" rowHeight="30px">
@@ -12,5 +21,4 @@
 
 
 
-<button (click)="preChange()">pre</button>
-<button (click)="nextChange()">next</button>
+</div>

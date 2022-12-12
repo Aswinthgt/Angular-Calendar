@@ -1,3 +1,4 @@
+import { compileDeclareNgModuleFromMetadata } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,12 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  preday:any;
+  preday: any;
   day: any;
-  nextday:any;
+  nextday: any;
   month: any;
+  year: any;
 
-  weeks :string[]=[
+  weeks: string[] = [
     "Sun",
     "Mon",
     "Tue",
@@ -35,24 +37,26 @@ export class AppComponent {
       "November",
       "December"]
 
-  date: any = new Date();
+  date: any= new Date();
 
 
 
   ngOnInit(): void {
+    this.calRender();
+  }
 
+  calRender() {
     this.date.setDate(1)
     const arrangedaypre = this.date.getDay();
-
-
     const arrangedaynext = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0).getDay();
 
-    const arrnext = 7 - arrangedaynext -1;
-   this.preday =[];
+    const arrnext = 7 - arrangedaynext - 1;
+    this.preday = [];
     this.day = [];
     this.nextday = [];
 
     this.month = this.months[this.date.getMonth()];
+    this.year = this.date.getFullYear();
 
 
     const lastday = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0).getDate();
@@ -61,33 +65,45 @@ export class AppComponent {
 
 
     for (let x = arrangedaypre; x > 0; x--) {
-      this.preday.push(predays - x +1);
+      this.preday.push(predays - x + 1);
     }
-
-
 
 
     for (let i = 1; i <= lastday; i++) {
       this.day.push(i);
     }
 
-    for(let j= 1; j <= arrnext; j++) {
+    for (let j = 1; j <= arrnext; j++) {
       this.nextday.push(j);
     }
-
   }
+
+
+
+
+
 
   nextChange() {
 
+   if(this.month === "December"){
+    this.date.setFullYear(this.date.getFullYear(this.date.setMonth(0)) + 1);
+    this.calRender();
+   }else{
     this.date.setMonth(this.date.getMonth() + 1);
-    this.ngOnInit();
-
+    this.calRender();
+   }
 
   }
 
   preChange() {
-    this.date.setMonth(this.date.getMonth() - 1);
-    this.ngOnInit();
+
+    if (this.month === "January") {
+      this.date.setFullYear(this.date.getFullYear(this.date.setMonth(11)) - 1);
+      this.calRender();
+    } else {
+      this.date.setMonth(this.date.getMonth() - 1);
+      this.calRender();
+    }
   }
 
 }
