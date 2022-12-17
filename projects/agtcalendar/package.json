@@ -1,13 +1,13 @@
 {
   "name": "agtcalendar",
-  "version": "0.0.7",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
     "@angular/material": "^15.0.0",
-    "@angular/cdk": "^15.0.0",
-    "@angular/material/icon": "15.0.0"
+    "@angular/cdk": "^15.0.0"
   },
+  "license": "MIT",
   "keywords": [
     "angular",
     "calendar",
