@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.setwidth {
+    font-family: 'Poppins', sans-serif;
+    margin: 30px;
+    width: 30%;
+    margin-top: 5%;
+    border: 2px solid rgb(210, 43, 173);
+    border-radius: 0.4rem;
+    padding: 20px;
+  
+  
+  }
+  
+  .inline {
+    display: flex;
+    justify-content: space-evenly;
+  
+  }
+  
+  .dayshover:hover {
+  
+    border: 1px solid rgb(210, 43, 173);
+    border-radius: 0.4rem;
+  }
+  
+  .today{
+    background-color: rgb(210, 43, 173);
+    border-radius: 0.4rem;
+  }
+  
+  /* .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+  } */
+  
+  /* .days mat-grid-tile {
+    font-size: 1.4rem;
+    width: calc(40.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  } */
+  
+  
+  .blur {
+    opacity: 50%;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .setwidth {
+      width: 80% !important;
+    }
+  }
+  
+  @media only screen and (max-width: 470px) {
+    .setwidth {
+      width: 70% !important;
+    }
+  }

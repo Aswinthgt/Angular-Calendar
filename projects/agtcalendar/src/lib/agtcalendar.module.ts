@@ -5,13 +5,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainComponent } from './main/main.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AgtcalendarComponent
+    AgtcalendarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule
   ],
   exports: [
-    AgtcalendarComponent
+    MainComponent
   ]
 })
 export class AgtcalendarModule { }
