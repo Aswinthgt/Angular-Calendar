@@ -1,24 +1,21 @@
 # Agtcalendar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+## install
 
-## Code scaffolding
+Step 1 : Go to the terminal ang enter command `npm install agtcalendar `.
 
-Run `ng generate component component-name --project agtcalendar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project agtcalendar`.
-> Note: Don't forget to add `--project agtcalendar` or else it will be added to the default project in your `angular.json` file. 
+##importing
 
-## Build
+Step 2 : go to the module and import the `AgtcalendarModule`,
 
-Run `ng build agtcalendar` to build the project. The build artifacts will be stored in the `dist/` directory.
+   import { AgtcalendarModule } from `agtcalendar`;
 
-## Publishing
+##using
 
-After building your library with `ng build agtcalendar`, go to the dist folder `cd dist/agtcalendar` and run `npm publish`.
+step 3: go to the html page and type the tag name as `<agt-calendar></agt-calendar>`.
 
-## Running unit tests
+## displaying
+  
+  use `ng serve --open` command to display the file
 
-Run `ng test agtcalendar` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
