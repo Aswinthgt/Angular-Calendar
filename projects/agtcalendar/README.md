@@ -1,6 +1,7 @@
 # Agtcalendar
 
 ## install
+note :::::  only for angular.
 
 Step 1 : Go to the terminal ang enter command `npm install agtcalendar `.
 
