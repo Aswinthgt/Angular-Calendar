@@ -1,5 +1,5 @@
-import { compileDeclareNgModuleFromMetadata } from '@angular/compiler';
-import { Component } from '@angular/core';
+
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+
+
   preday: any;
   day: any;
   nextday: any;
   month: any;
   year: any;
-
+  today!: string | number;
   weeks: string[] = [
     "Sun",
     "Mon",
@@ -37,7 +41,7 @@ export class AppComponent {
       "November",
       "December"]
 
-  date: any= new Date();
+  date: any = new Date();
 
 
 
@@ -68,10 +72,10 @@ export class AppComponent {
       this.preday.push(predays - x + 1);
     }
 
-
     for (let i = 1; i <= lastday; i++) {
       this.day.push(i);
     }
+    this.today = new Date().getMonth() === this.date.getMonth() && new Date().getFullYear() === this.date.getFullYear() ? new Date().getDate() : "";
 
     for (let j = 1; j <= arrnext; j++) {
       this.nextday.push(j);
@@ -85,20 +89,20 @@ export class AppComponent {
 
   nextChange() {
 
-   if(this.month === "December"){
-    this.date.setFullYear(this.date.getFullYear(this.date.setMonth(0)) + 1);
-    this.calRender();
-   }else{
-    this.date.setMonth(this.date.getMonth() + 1);
-    this.calRender();
-   }
+    if (this.month === "December") {
+      this.date.setFullYear(this.date.getFullYear() + 1, 0);
+      this.calRender();
+    } else {
+      this.date.setMonth(this.date.getMonth() + 1);
+      this.calRender();
+    }
 
   }
 
   preChange() {
 
     if (this.month === "January") {
-      this.date.setFullYear(this.date.getFullYear(this.date.setMonth(11)) - 1);
+      this.date.setFullYear(this.date.getFullYear() - 1, 11);
       this.calRender();
     } else {
       this.date.setMonth(this.date.getMonth() - 1);
