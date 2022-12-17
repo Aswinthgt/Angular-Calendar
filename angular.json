@@ -95,6 +95,39 @@
           }
         }
       }
+    },
+    "agtcalendar": {
+      "projectType": "library",
+      "root": "projects/agtcalendar",
+      "sourceRoot": "projects/agtcalendar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/agtcalendar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/agtcalendar/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/agtcalendar/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/agtcalendar/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
